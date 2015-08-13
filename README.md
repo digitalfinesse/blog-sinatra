@@ -1,4 +1,3 @@
-sinatra-bootstrap-clean
-=======================
+Чистая версия Sinatra + Bootstrap
 
-Cleaned version of https://github.com/bootstrap-ruby/sinatra-bootstrap
+https://github.com/bootstrap-ruby/sinatra-bootstrap
