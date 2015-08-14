@@ -13,7 +13,13 @@ before do
 end
 
 configure do
-
+	init_db 
+	@db.execute 'CREATE TABLE IF NOT EXISTS Posts
+	(
+	  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	  created_date DATE NOT NULL,
+	  content TEXT NOT NULL
+	);'
 end
 
 get '/' do
