@@ -61,6 +61,8 @@ get '/details/:post_id' do
 	
 	@row = results[0]
 
+	@comments = @db.execute 'select * from Comments where post_id = ? order by id', [post_id]
+
 
 
 	erb :details
@@ -70,8 +72,6 @@ post '/details/:post_id' do
 
 	post_id = params[:post_id]
 	content = params[:content]
-
-	erb "Ваш комментарий #{content} для поста #{post_id}"
 
 	@db.execute 'insert into Comments (content, created_date, post_id) values (?, datetime(), ?)', [content, post_id]
 

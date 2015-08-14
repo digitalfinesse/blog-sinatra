@@ -9,7 +9,7 @@
 
 </p>
 
-<h4>Комментарии:</h4>
+
 
 <form action ='/details/<%= @row["id"] %>' method='POST'>
 
@@ -18,5 +18,18 @@
 	<br>
 
 	<button type="submit" class="btn btn-primary">Добавить комментарий</button>
-
 </form>
+
+<h4>Комментарии:</h4>
+
+<% @comments.each do |comment| %>
+	
+	<hr>
+	<p>
+		<%= comment['content'] %><br>
+		<span style="color: grey; font-size: 70%;">Добавлено: <%= @row['created_date'] %></span>
+		
+
+	</p>
+
+<% end %>
